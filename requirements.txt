@@ -4,3 +4,4 @@ requests
 openai
 transformers
 beautifulsoup4
+diskcache
