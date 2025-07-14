@@ -30,7 +30,7 @@ jobs:
           flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
 
       - name: Run basic syntax check on app
-        run: python -m py_compile streamlit_app.py
+        run: python -m py_compile frontend/src/streamlit_app.py
 
       - name: Run unit tests (optional)
         run: |
@@ -41,9 +41,9 @@ jobs:
 
       - name: Run Streamlit app (optional)
         run: |
-          if [ -f "streamlit_app.py" ]; then
+          if [ -f "frontend/src/streamlit_app.py" ]; then
             streamlit cache clear
-            streamlit run streamlit_app.py --server.headless true --server.port 8501 &
+            streamlit run frontend/src/streamlit_app.py --server.headless true --server.port 8501 &
             sleep 10  # Wait for the app to start
             curl -f http://localhost:8501 || exit 1
           fi
