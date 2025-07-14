@@ -5,3 +5,6 @@ openai
 transformers
 beautifulsoup4
 diskcache
+torch
+huggingface_hub
+accelerate
