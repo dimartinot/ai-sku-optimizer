@@ -8,3 +8,4 @@ diskcache
 torch
 huggingface_hub
 accelerate
+dotenv
